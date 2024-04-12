@@ -1,6 +1,6 @@
 package hw12;
 
-interface Printable {
+interface Printable{
     void print();
 }
 
