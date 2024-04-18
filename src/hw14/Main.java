@@ -10,7 +10,7 @@ public class Main {
                 throw new IllegalArgumentException("Array must not be empty");
             }
 
-            int max = array[0]; // Инициализация первым элементом
+            int max = array[0];
 
             for (int i = 1; i < array.length; i++) {
                 if (array[i] > max) {
