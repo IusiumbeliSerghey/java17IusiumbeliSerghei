@@ -1,77 +1,26 @@
 package hw12;
+//Интерфейс Printable
+//Определить интерфейс Printable, содержащий метод void print().
+//Определить класс Book, реализующий интерфейс Printable.
+//Определить класс Magazine, реализующий интерфейс Printable.
+//Создать массив типа Printable, который будет содержать книги и журналы.
+//В цикле пройти по массиву и вызвать метод print() для каждого объекта.
+//Создать статический метод printMagazines(Printable[] printable) в классе
+// Magazine, который выводит на консоль названия только журналов.
+//Создать статический метод printBooks(Printable[] printable) в классе Book,
+// который выводит на консоль названия только книг. Используем оператор instanceof.
+//Интерфейс Инструмент
+//Создать интерфейс Инструмент и реализующие его классы Гитара, Барабан и Труба.
+//Интерфейс Инструмент содержит метод play() и переменную String KEY ="До мажор".
+//Гитара содержит переменные класса количествоСтрун, Барабан - размер, Труба - диаметр.
+//Создать массив типа Инструмент, содержащий инструменты разного типа.
+//В цикле вызвать метод play() для каждого инструмента, который должен выводить строку
+// "Играет такой-то инструмент, с такими-то характеристиками".
 
 interface Printable {
     void print();
 }
 
-
-class Book implements Printable {
-    private static String title;
-
-    public Book(String title) {
-        this.title = title;
-    }
-
-    public void print() {
-        System.out.println("Book: " + title);
-    }
-
-}
-
-
-class Magazine implements Printable {
-    private String title;
-
-    public Magazine(String title) {
-        this.title = title;
-    }
-
-    public void print() {
-        System.out.println("Magazine: " + title);
-    }
-}
-
-
-// Класс Гитара реализует интерфейс Инструмент
-class Gitara implements  Musicalinstrument{
-    private int numberOfStrings;
-
-    public Gitara(int numberOfStrings) {
-        this.numberOfStrings = numberOfStrings;
-    }
-
-    public void play() {
-        System.out.println("Играет гитара с " + numberOfStrings + " струнами");
-    }
-}
-
-// Класс Барабан реализует интерфейс Инструмент
-class Baraban implements Musicalinstrument {
-    private String size;
-
-    public Baraban(String size) {
-        this.size = size;
-    }
-
-    public void play() {
-        System.out.println("Играет барабан размером " + size);
-    }
-}
-
-// Класс Труба реализует интерфейс Инструмент
-class Truba implements Musicalinstrument {
-    private String diameter;
-
-    public Truba(String diameter) {
-        this.diameter = diameter;
-    }
-
-    public void play() {
-        System.out.println("Играет труба с диаметром " + diameter);
-    }
-}
-
-// Интерфейс Инструмент
 interface Musicalinstrument {
     String KEY = "До мажор";
 
