@@ -6,5 +6,4 @@ public class Exception extends Main {
         int max = findMax(array);
         System.out.println("Максимальный элемент в массиве: " + max);
     }
-
 }
