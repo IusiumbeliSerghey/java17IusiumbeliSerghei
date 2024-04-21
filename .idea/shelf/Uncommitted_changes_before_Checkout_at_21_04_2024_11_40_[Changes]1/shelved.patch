@@ -1,0 +1,55 @@
+Index: src/hw14/Main.java
+===================================================================
+diff --git a/src/hw14/Main.java b/src/hw14/Main.java
+deleted file mode 100644
+--- a/src/hw14/Main.java	
++++ /dev/null	
+@@ -1,32 +0,0 @@
+-package hw14;
+-//Добавить в свои классы проверку и выкидывать исключения в случае ошибок
+-//Обработать исключения в try catch
+-
+-
+-public class Main {
+-    public static int findMax(int[] array) {
+-        try {
+-            if (array.length == 0) {
+-                throw new IllegalArgumentException("Array must not be empty");
+-            }
+-
+-            int max = array[0];
+-
+-            for (int i = 1; i < array.length; i++) {
+-                if (array[i] > max) {
+-                    max = array[i];
+-                }
+-            }
+-
+-            return max;
+-        } catch (IllegalArgumentException e) {
+-            System.err.println("Error: " + e.getMessage());
+-            return array.length;
+-        }
+-    }
+-
+-
+-}
+-
+-
+-
+Index: src/hw14/Exception.java
+===================================================================
+diff --git a/src/hw14/Exception.java b/src/hw14/Exception.java
+deleted file mode 100644
+--- a/src/hw14/Exception.java	
++++ /dev/null	
+@@ -1,9 +0,0 @@
+-package hw14;
+-
+-public class Exception extends Main {
+-    public static void main(String[] args) {
+-        int[] array = {};
+-        int max = findMax(array);
+-        System.out.println("Максимальный элемент в массиве: " + max);
+-    }
+-}
