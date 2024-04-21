@@ -1,0 +1,84 @@
+Index: src/hw12/Interface.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package hw12;\n//Интерфейс Printable\n//Определить интерфейс Printable, содержащий метод void print().\n//Определить класс Book, реализующий интерфейс Printable.\n//Определить класс Magazine, реализующий интерфейс Printable.\n//Создать массив типа Printable, который будет содержать книги и журналы.\n//В цикле пройти по массиву и вызвать метод print() для каждого объекта.\n//Создать статический метод printMagazines(Printable[] printable) в классе\n// Magazine, который выводит на консоль названия только журналов.\n//Создать статический метод printBooks(Printable[] printable) в классе Book,\n// который выводит на консоль названия только книг. Используем оператор instanceof.\n//Интерфейс Инструмент\n//Создать интерфейс Инструмент и реализующие его классы Гитара, Барабан и Труба.\n//Интерфейс Инструмент содержит метод play() и переменную String KEY =\"До мажор\".\n//Гитара содержит переменные класса количествоСтрун, Барабан - размер, Труба - диаметр.\n//Создать массив типа Инструмент, содержащий инструменты разного типа.\n//В цикле вызвать метод play() для каждого инструмента, который должен выводить строку\n// \"Играет такой-то инструмент, с такими-то характеристиками\".\n\ninterface Printable {\n    void print();\n}\n\n\nclass Book implements Printable {\n    private static String title;\n\n    public Book(String title) {\n        this.title = title;\n    }\n\n    public void print() {\n        System.out.println(\"Book: \" + title);\n    }\n\n}\n\n\nclass Magazine implements Printable {\n    private String title;\n\n    public Magazine(String title) {\n        this.title = title;\n    }\n\n    public void print() {\n        System.out.println(\"Magazine: \" + title);\n    }\n}\n\n\n\nclass Gitara implements  Musicalinstrument{\n    private int numberOfStrings;\n\n    public Gitara(int numberOfStrings) {\n        this.numberOfStrings = numberOfStrings;\n    }\n\n    public void play() {\n        System.out.println(\"Играет гитара с \" + numberOfStrings + \" струнами\");\n    }\n}\n\n\nclass Baraban implements Musicalinstrument {\n    private String size;\n\n    public Baraban(String size) {\n        this.size = size;\n    }\n\n    public void play() {\n        System.out.println(\"Играет барабан размером \" + size);\n    }\n}\n\n\nclass Truba implements Musicalinstrument {\n    private String diameter;\n\n    public Truba(String diameter) {\n        this.diameter = diameter;\n    }\n\n    public void play() {\n        System.out.println(\"Играет труба с диаметром \" + diameter);\n    }\n}\n\n\ninterface Musicalinstrument {\n    String KEY = \"До мажор\";\n\n    void play();\n}\n\npublic class Interface {\n    public static void main(String[] args) {\n        Printable[] printableItems = new Printable[4];\n        printableItems[0] = new Book(\"Java: Полное руководство\");\n        printableItems[1] = new Magazine(\"National Geographic\");\n        printableItems[2] = new Book(\"Война и мир\");\n        printableItems[3] = new Magazine(\"Time\");\n\n        for (Printable printable : printableItems) {\n            printable.print();\n        }\n\n        Musicalinstrument[] instruments = new Musicalinstrument[3];\n        instruments[0] = new Gitara(6);\n        instruments[1] = new Baraban(\"большой\");\n        instruments[2] = new Truba(\"средний\");\n\n        for (Musicalinstrument instrument : instruments) {\n            instrument.play();\n        }\n    }\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/hw12/Interface.java b/src/hw12/Interface.java
+--- a/src/hw12/Interface.java	(revision bf581333f68a41d5552b12f088be18e1342d9a3b)
++++ b/src/hw12/Interface.java	(date 1713559129501)
+@@ -22,73 +22,6 @@
+ }
+ 
+ 
+-class Book implements Printable {
+-    private static String title;
+-
+-    public Book(String title) {
+-        this.title = title;
+-    }
+-
+-    public void print() {
+-        System.out.println("Book: " + title);
+-    }
+-
+-}
+-
+-
+-class Magazine implements Printable {
+-    private String title;
+-
+-    public Magazine(String title) {
+-        this.title = title;
+-    }
+-
+-    public void print() {
+-        System.out.println("Magazine: " + title);
+-    }
+-}
+-
+-
+-
+-class Gitara implements  Musicalinstrument{
+-    private int numberOfStrings;
+-
+-    public Gitara(int numberOfStrings) {
+-        this.numberOfStrings = numberOfStrings;
+-    }
+-
+-    public void play() {
+-        System.out.println("Играет гитара с " + numberOfStrings + " струнами");
+-    }
+-}
+-
+-
+-class Baraban implements Musicalinstrument {
+-    private String size;
+-
+-    public Baraban(String size) {
+-        this.size = size;
+-    }
+-
+-    public void play() {
+-        System.out.println("Играет барабан размером " + size);
+-    }
+-}
+-
+-
+-class Truba implements Musicalinstrument {
+-    private String diameter;
+-
+-    public Truba(String diameter) {
+-        this.diameter = diameter;
+-    }
+-
+-    public void play() {
+-        System.out.println("Играет труба с диаметром " + diameter);
+-    }
+-}
+-
+-
+ interface Musicalinstrument {
+     String KEY = "До мажор";
+ 
