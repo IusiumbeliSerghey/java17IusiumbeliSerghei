@@ -9,9 +9,7 @@ public class Main {
             myCar.safetyBelt("Not Belt");
             myCar.drive(0);
 
-        } catch (NotFuelException e) {
-            System.err.println("Exception caught: " + e.getMessage());
-        } catch (NotBeltException e) {
+        } catch (NotFuelException | NotBeltException e) {
             System.err.println("Exception caught: " + e.getMessage());
         }
     }
